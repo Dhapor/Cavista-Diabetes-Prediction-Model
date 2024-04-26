@@ -95,7 +95,7 @@ import pickle
 from tensorflow.keras.models import load_model
 model = load_model('cavistadiabetespred.h5')
 
-st.sidebar.image('pngwing.com (1).png', width = 300,)
+st.sidebar.image('pngwing.com (1).png', width = 200,)
 st.sidebar.markdown('<br>', unsafe_allow_html=True)
 selected_page = st.sidebar.radio('Navigation', ['Home', 'Modeling'])
 

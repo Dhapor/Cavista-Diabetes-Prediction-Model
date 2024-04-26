@@ -138,7 +138,7 @@ def HomePage():
 
 
     # Streamlit app footer
-    st.markdown("<p style='text-align: LEFT; font-size: 12px;'>Created with ❤️ by Datapsalm</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: LEFT; font-size: 12px;'>CREATED BY THE ORPHEUS SNIPERS</p>", unsafe_allow_html=True)
 
 # Function to define the modeling page content
 def modeling_page():
@@ -154,8 +154,7 @@ elif selected_page == "Modeling":
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
     modeling_page()
 
-# selected_columns = ['age','gender', 'bmi', 'blood_glucose_level', 'HbA1c_level', 'smoking_history', 'heart_disease']
-# jdjhage
+
 
 if selected_page == "Modeling":
     st.sidebar.markdown("Add your modeling content here")
@@ -213,7 +212,7 @@ if selected_page == "Modeling":
     st.markdown('<hr>', unsafe_allow_html=True)
     
 
-    st.markdown("<h8 style = 'color: #2B2A4C; text-align: LEFT; font-family:montserrat'>DIABETES PREDICTION MODEL BUILT BY DATAPSALM</h8>",unsafe_allow_html=True)
+    st.markdown("<h8 style = 'color: #2B2A4C; text-align: LEFT; font-family:montserrat'>DIABETES PREDICTION MODEL BUILT BY ORPHEUS SNIPERS </h8>",unsafe_allow_html=True)
 
 
     

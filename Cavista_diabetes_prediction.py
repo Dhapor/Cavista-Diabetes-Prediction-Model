@@ -115,8 +115,8 @@ def HomePage():
     st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>gender</h3>", unsafe_allow_html=True)
     st.markdown("<p>gender refers to the biological sex of the individual, which can have an impact on their susceptibility to diabetes. There are three</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Age</h3>", unsafe_allow_html=True)
-    st.markdown("<p>Age is an important factor as diabetes is more commonly diagnosed in older adults.Age ranges from 0-80 in our dataset.</p>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>age</h3>", unsafe_allow_html=True)
+    st.markdown("<p>age is an important factor as diabetes is more commonly diagnosed in older adults.age ranges from 0-80 in our dataset.</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Hypertension</h3>", unsafe_allow_html=True)
     st.markdown("<p>Hypertension is a medical condition in which the blood pressure in the arteries is persistently elevated.</p>", unsafe_allow_html=True)
@@ -154,30 +154,30 @@ elif selected_page == "Modeling":
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
     modeling_page()
 
-
+# selected_columns = ['age','gender', 'bmi', 'blood_glucose_level', 'HbA1c_level', 'smoking_history', 'heart_disease']
+# jdjhage
 
 if selected_page == "Modeling":
     st.sidebar.markdown("Add your modeling content here")
     gender = st.sidebar.selectbox("gender", df['gender'].unique())
-    Age = st.sidebar.number_input("Age", 0,100)
-    Hypertension = st.sidebar.selectbox("Hypertension", df['Hypertension'].unique())
-    Heart_disease = st.sidebar.selectbox("Heart_disease", df['Heart_disease'].unique())
-    Smoking_history = st.sidebar.selectbox('Smoking_history', df['Smoking_history'].unique())
-    Body_Mass_Index = st.sidebar.number_input("Body_Mass_Index",  0.0, 100.0, format="%.2f")      
-    Hemoglobin_A1c = st.sidebar.number_input("Hemoglobin_A1c", 0.0, 100.0, format="%.1f")
-    Blood_glucose_level = st.sidebar.number_input("Blood_glucose_level",0,1000)
+    age = st.sidebar.number_input("age", 0,100)
+    heart_disease = st.sidebar.selectbox("heart_disease", df['heart_disease'].unique())
+    smoking_history = st.sidebar.selectbox('smoking_history', df['smoking_history'].unique())
+    bmi = st.sidebar.number_input("bmi",  0.0, 100.0, format="%.2f")      
+    HbA1c_level = st.sidebar.number_input("HbA1c_level", 0.0, 100.0, format="%.1f")
+    blood_glucose_level = st.sidebar.number_input("blood_glucose_level",0,1000)
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
 
 
     input_variables = pd.DataFrame([{
         'gender':gender,
-        'Age': Age,
+        'age': age,
         'Hypertension': Hypertension,
-        'Heart_disease': Heart_disease,
-        'Smoking_history': Smoking_history, 
-        'Body_Mass_Index': Body_Mass_Index, 
-        'Hemoglobin_A1c': Hemoglobin_A1c,
-        'Blood_glucose_level':Blood_glucose_level 
+        'heart_disease': heart_disease,
+        'smoking_history': smoking_history, 
+        'bmi': bmi, 
+        'HbA1c_level': HbA1c_level,
+        'blood_glucose_level':blood_glucose_level 
     }])
 
 

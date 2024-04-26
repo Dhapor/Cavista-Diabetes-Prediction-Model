@@ -27,7 +27,7 @@ def HomePage():
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown("<h6 style = 'margin: -15px; color: #2B2A4C; text-align: center ; font-family:montserrat'>This is a Diabetes Prediction Model that was built Using Machine Learning to Enhance Early Detection and Improve Patient Outcomes.</h6>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.image('newk.svg',  width = 700)
+    st.image('glowing-abstract-design-cancer-cells-generated-by-ai.jpg',  width = 700)
     st.markdown('<br>', unsafe_allow_html= True)
 
 

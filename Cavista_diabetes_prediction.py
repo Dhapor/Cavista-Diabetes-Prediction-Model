@@ -112,8 +112,8 @@ def HomePage():
     st.markdown('<br>', unsafe_allow_html= True)
 
     st.markdown("<h3 style='color: #2B2A4C;text-align: center; font-family:montserrat'>The Model Features</h3>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Gender</h3>", unsafe_allow_html=True)
-    st.markdown("<p>Gender refers to the biological sex of the individual, which can have an impact on their susceptibility to diabetes. There are three</p>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>gender</h3>", unsafe_allow_html=True)
+    st.markdown("<p>gender refers to the biological sex of the individual, which can have an impact on their susceptibility to diabetes. There are three</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Age</h3>", unsafe_allow_html=True)
     st.markdown("<p>Age is an important factor as diabetes is more commonly diagnosed in older adults.Age ranges from 0-80 in our dataset.</p>", unsafe_allow_html=True)
@@ -158,7 +158,7 @@ elif selected_page == "Modeling":
 
 if selected_page == "Modeling":
     st.sidebar.markdown("Add your modeling content here")
-    Gender = st.sidebar.selectbox("Gender", df['Gender'].unique())
+    gender = st.sidebar.selectbox("gender", df['gender'].unique())
     Age = st.sidebar.number_input("Age", 0,100)
     Hypertension = st.sidebar.selectbox("Hypertension", df['Hypertension'].unique())
     Heart_disease = st.sidebar.selectbox("Heart_disease", df['Heart_disease'].unique())
@@ -170,7 +170,7 @@ if selected_page == "Modeling":
 
 
     input_variables = pd.DataFrame([{
-        'Gender':Gender,
+        'gender':gender,
         'Age': Age,
         'Hypertension': Hypertension,
         'Heart_disease': Heart_disease,

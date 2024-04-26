@@ -172,7 +172,6 @@ if selected_page == "Modeling":
     input_variables = pd.DataFrame([{
         'gender':gender,
         'age': age,
-        'Hypertension': Hypertension,
         'heart_disease': heart_disease,
         'smoking_history': smoking_history, 
         'bmi': bmi, 
@@ -187,7 +186,7 @@ if selected_page == "Modeling":
 
     # Standard Scale the Input Variable.
     import pickle
-    filename = 'Finalize_Train.sav'
+    filename = 'labSca.sav'
     with open(filename, 'rb') as file:
         saved_data = pickle.load(file)
     label_encoders = saved_data['label_encoders']

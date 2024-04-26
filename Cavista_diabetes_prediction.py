@@ -11,6 +11,84 @@ data = pd.read_csv('diabetes_prediction_dataset.csv')
 df = data.copy()
 df.head(3)
 
+import pickle
+import pandas as pd
+from collections import defaultdict
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+
+# # Create LabelEncoder and StandardScaler instances
+# lbl_en = defaultdict(LabelEncoder)
+# scaler = StandardScaler()
+
+# columns_to_encode = ['gender', 'smoking_history']
+# columns_to_scale = ['age','bmi', 'blood_glucose_level']  # Add your numeric columns here
+
+# # Apply LabelEncoder to categorical columns
+# ds[columns_to_encode] = ds[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
+
+# # Apply StandardScaler to numeric columns
+# ds[columns_to_scale] = scaler.fit_transform(ds[columns_to_scale])
+
+# # Save LabelEncoder, StandardScaler, and other necessary information
+# filename = 'labSca.sav'
+# data_to_save = {
+#     'label_encoders': dict(lbl_en),
+#     'scaler': scaler,
+#     'columns_to_encode': columns_to_encode,
+#     'columns_to_scale': columns_to_scale
+#     # Add any other information you want to save
+# }
+
+# pickle.dump(data_to_save, open(filename, 'wb'))
+
+
+# x = ds.drop('diabetes',axis=1)
+# y = df.diabetes
+# #using XGBOOST to find feature importance
+# import xgboost as xgb
+# model = xgb.XGBClassifier()
+# model.fit(x,y)
+
+# # first feature importance scores
+# xgb.plot_importance(model)
+
+
+# # feature selection
+# selected_columns = ['age','gender', 'bmi', 'blood_glucose_level', 'HbA1c_level', 'smoking_history', 'heart_disease']
+# new_ds = ds[selected_columns]
+# new_ds.head()
+
+# from sklearn.model_selection import train_test_split
+# from sklearn.metrics import classification_report
+
+
+# x_train, x_test, y_train, y_test = train_test_split(new_ds, y, test_size = 0.10, random_state = 47, stratify = y)
+# print(f'x_train: {x_train.shape}')
+# print(f'x_test: {x_test.shape}')
+# print('y_train: {}'.format(y_train.shape))
+# print('y_test: {}'.format(y_test.shape))
+
+# DEEPE LEARNING MODEL
+
+# model = tf.keras.Sequential([ #........................ Instantiate the model creating class.
+#     tf.keras.layers.Dense(units=12, activation='relu'), #... Input layer of 12 features
+#     tf.keras.layers.Dense(20, activation='relu'), #.... Add the second 20 layer, and instantiate the activation to be used.
+#     tf.keras.layers.Dense(40, activation='relu'), #..... Add the third layer.
+#     tf.keras.layers.Dense(20, activation='relu'), #..... Add the third layer.
+#     tf.keras.layers.Dense(40, activation='relu'), #..... Add the third layer.
+#     tf.keras.layers.Dense(1, activation='sigmoid') #... Add the last output layer
+# ])
+# model.compile(optimizer='adam', # ..................... The optimizer that adjusts weight and bias for a given neuron
+#               loss = 'binary_crossentropy', #...... Loss calculates the error of the prediction
+#               metrics=['accuracy']) #.................. Accuracy calculates the precision of the prediction.
+
+# model.fit(x_train, y_train, epochs=25) #..... Fit the model on the dataset and define the number of epochs
+
+
+
+
+
+
 
 import streamlit as st
 import pickle
@@ -25,15 +103,10 @@ def HomePage():
     # Streamlit app header
     st.markdown("<h1 style = 'color: #2B2A4C; text-align: center; font-family:montserrat'>Diabetes Prediction Model</h1>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h6 style = 'margin: -15px; color: #2B2A4C; text-align: center ; font-family:montserrat'>This is a Diabetes Prediction Model that was built Using Machine Learning to Enhance Early Detection and Improve Patient Outcomes.</h6>",unsafe_allow_html=True)
+    st.markdown("<h6 style = 'margin: -15px; color: #2B2A4C; text-align: center ; font-family:montserrat'>This is a Diabetes Prediction Model that was built by the Orpheus Sniper at the Cavista Hackathon Using Machine Learning to Enhance Early Detection and Improve Patient Outcomes.</h6>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
     st.image('glowing-abstract-design-cancer-cells-generated-by-ai.jpg',  width = 700)
     st.markdown('<br>', unsafe_allow_html= True)
-
-
-    # Background story
-    st.markdown("<h3 style = 'margin: -15px; color: #2B2A4C; text-align: center; font-family:montserrat'>Background to the story</h3>",unsafe_allow_html=True)
-    st.markdown("This project is personal to me because my grandpa had diabetes for a long time. I want to create a computer program that can tell if someone might get diabetes in the future. By using information about a person's health, the program will try to help them know if they need to be careful. I'm doing this so that others don't have to go through what my grandpa did. Let's work together to use technology to help people stay healthy and avoid diabetes", unsafe_allow_html = True)
 
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown('<br>', unsafe_allow_html= True)

@@ -182,28 +182,28 @@ if selected_page == "Modeling":
     st.write(input_variables)
 
     import pickle
-import pandas as pd
-
-# Load the saved model and scalers
-filename = 'labSca.sav'
-with open(filename, 'rb') as file:
-    saved_data = pickle.load(file)
-
-label_encoders = saved_data['label_encoders']
-scaler = saved_data['scaler']
-columns_to_encode = saved_data['columns_to_encode']
-columns_to_scale = saved_data['columns_to_scale']
-
-
-# Transform categorical columns using label encoders
-for col, encoder in label_encoders.items():
-    input_variables[col] = encoder.transform(input_variables[col])
-
-# Scale numerical columns using the saved scaler
-input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
-
-# Now input_variables should be ready for prediction
-print(input_variables)
+    import pandas as pd
+    
+    # Load the saved model and scalers
+    filename = 'labSca.sav'
+    with open(filename, 'rb') as file:
+        saved_data = pickle.load(file)
+    
+    label_encoders = saved_data['label_encoders']
+    scaler = saved_data['scaler']
+    columns_to_encode = saved_data['columns_to_encode']
+    columns_to_scale = saved_data['columns_to_scale']
+    
+    
+    # Transform categorical columns using label encoders
+    for col, encoder in label_encoders.items():
+        input_variables[col] = encoder.transform(input_variables[col])
+    
+    # Scale numerical columns using the saved scaler
+    input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
+    
+    # Now input_variables should be ready for prediction
+    print(input_variables)
 
     # cat = input_variables.select_dtypes(include = ['object', 'category'])
     # num = input_variables.select_dtypes(include = 'number')

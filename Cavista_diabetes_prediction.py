@@ -144,7 +144,7 @@ def HomePage():
 def modeling_page():
     st.markdown("<h1 style='text-align: LEFT; color: #2B2A4C;'>Dataset Sample</h1>", unsafe_allow_html=True)
     # st.sidebar.markdown('<br><br><br>', unsafe_allow_html= True)
-    st.write(df.head())
+    st.write(df)
     # st.sidebar.image('pngwing.com (13).png', width = 300,  caption = 'customer and deliver agent info')
 
 

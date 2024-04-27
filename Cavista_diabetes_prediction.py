@@ -202,8 +202,7 @@ if selected_page == "Modeling":
     # Scale numerical columns using the saved scaler
     input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
     
-    # Now input_variables should be ready for prediction
-    print(input_variables)
+
 
     # cat = input_variables.select_dtypes(include = ['object', 'category'])
     # num = input_variables.select_dtypes(include = 'number')

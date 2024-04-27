@@ -222,19 +222,21 @@ if selected_page == "Modeling":
             input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
 
 
-        if patient_name:
+    if patient_name:
             if st.button('Press To Predict'):
                 st.markdown("<h4 style='color: #2B2A4C; text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)
                 predicted = model.predict(input_variables)
                 st.toast('Predicted Successfully')
                 st.image('check icon.png', width=100)
                 if predicted >= 0.5:
-                    st.error(f"{patient_name} you may be at high risk of having Diabetes!")
+                    st.error(f"{patient_name} you may be at high risk of Lung Cancer!")
                 else:
-                    st.success(f"{patient_name} is at low risk of Diabetes")
-        else:
+                    st.success(f"{patient_name} is at low risk of Lung Cancer")
+    else:
             st.warning("Please enter the patient's name.")
-        
+    
+    st.markdown('<hr>', unsafe_allow_html=True)
+    
 
     st.markdown("<h8 style = 'color: #2B2A4C; text-align: LEFT; font-family:montserrat'>DIABETES PREDICTION MODEL BUILT BY ORPHEUS SNIPERS </h8>",unsafe_allow_html=True)
 

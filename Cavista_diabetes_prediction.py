@@ -182,39 +182,17 @@ if selected_page == "Modeling":
     st.markdown("<h2 style='text-align: LEFT; color: #2B2A4C;'>Your Input Appears Here</h2>", unsafe_allow_html=True)
     st.write(input_variables)
     
+    cat = input_variables.select_dtypes(include = ['object', 'category'])
+    num = input_variables.select_dtypes(include = 'number')
 
-    import pickle
-    import pandas as pd
-    
-    # # Load the saved model and scalers
-    # filename = 'labSca.sav'
-    # with open(filename, 'rb') as file:
-    #     saved_data = pickle.load(file)
-    
-    # label_encoders = saved_data['label_encoders']
-    # scaler = saved_data['scaler']
-    # columns_to_encode = saved_data['columns_to_encode']
-    # columns_to_scale = saved_data['columns_to_scale']
-
-
-    # # Transform categorical columns using label encoders
-    # for col, encoder in label_encoders.items():
-    #     # Reorder input_variables columns to match the order used during fitting
-    #     input_variables = input_variables[columns_to_encode + columns_to_scale]
-    #     input_variables[col] = encoder.transform(input_variables[col])
-
-
-cat = input_variables.select_dtypes(include = ['object', 'category'])
-num = input_variables.select_dtypes(include = 'number')
-
-# Standard Scale the Input Variable.
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-for i in input_variables.columns:
-    if i in num.columns:
-        input_variables[i] = StandardScaler().fit_transform(input_variables[[i]])
-for i in input_variables.columns:
-    if i in cat.columns: 
-        input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
+    # Standard Scale the Input Variable.
+    from sklearn.preprocessing import StandardScaler, LabelEncoder
+    for i in input_variables.columns:
+        if i in num.columns:
+            input_variables[i] = StandardScaler().fit_transform(input_variables[[i]])
+    for i in input_variables.columns:
+        if i in cat.columns: 
+            input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
 
 
     if st.button('Press To Predict'):

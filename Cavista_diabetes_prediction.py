@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 # import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
 
-data = pd.read_csv('diabetes_prediction_dataset.csv')
+data = pd.read_csv("diabetes_prediction_dataset.csv")
 df = data.copy()
-df.head(3)
+# df.head(3)
 
 import pickle
 import pandas as pd

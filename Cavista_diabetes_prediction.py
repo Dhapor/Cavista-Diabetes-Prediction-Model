@@ -222,7 +222,7 @@ if selected_page == "Modeling":
             input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
 
 
-       if patient_name:
+        if patient_name:
             if st.button('Press To Predict'):
                 st.markdown("<h4 style='color: #2B2A4C; text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)
                 predicted = model.predict(input_variables)

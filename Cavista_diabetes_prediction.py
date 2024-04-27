@@ -183,19 +183,25 @@ if selected_page == "Modeling":
     st.write(input_variables)
     
 
-    # Standard Scale the Input Variable.
-    import pickle
+       import pickle
+    import pandas as pd
+    
+    # Load the saved model and scalers
     filename = 'labSca.sav'
     with open(filename, 'rb') as file:
         saved_data = pickle.load(file)
+    
     label_encoders = saved_data['label_encoders']
     scaler = saved_data['scaler']
+    columns_to_encode = saved_data['columns_to_encode']
+    columns_to_scale = saved_data['columns_to_scale']
 
-    for col in input_variables.columns:
-        if col in label_encoders:
-            input_variables[col] = label_encoders[col].transform(input_variables[col])
 
-    st.markdown('<hr>', unsafe_allow_html=True)
+    # Transform categorical columns using label encoders
+    for col, encoder in label_encoders.items():
+        # Reorder input_variables columns to match the order used during fitting
+        input_variables = input_variables[columns_to_encode + columns_to_scale]
+        input_variables[col] = encoder.transform(input_variables[col])
 
 
     if st.button('Press To Predict'):

@@ -27,7 +27,7 @@ columns_to_scale = ['age','bmi', 'blood_glucose_level']  # Add your numeric colu
 df[columns_to_encode] = df[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
 
 # Apply StandardScaler to numeric columns
-ds[columns_to_scale] = scaler.fit_transform(ds[columns_to_scale])
+df[columns_to_scale] = scaler.fit_transform(df[columns_to_scale])
 
 # Save LabelEncoder, StandardScaler, and other necessary information
 filename = 'labSca.sav'

@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 # import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
 
-data = pd.read_csv("diabetes_prediction_dataset.csv")
-df = data.copy()
+df = pd.read_csv("diabetes_prediction_dataset.csv")
+# df = data.copy()
 # df.head(3)
 
 import pickle
@@ -16,28 +16,28 @@ import pandas as pd
 from collections import defaultdict
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
-# # Create LabelEncoder and StandardScaler instances
-# lbl_en = defaultdict(LabelEncoder)
-# scaler = StandardScaler()
+# Create LabelEncoder and StandardScaler instances
+lbl_en = defaultdict(LabelEncoder)
+scaler = StandardScaler()
 
-# columns_to_encode = ['gender', 'smoking_history']
-# columns_to_scale = ['age','bmi', 'blood_glucose_level']  # Add your numeric columns here
+columns_to_encode = ['gender', 'smoking_history']
+columns_to_scale = ['age','bmi', 'blood_glucose_level']  # Add your numeric columns here
 
-# # Apply LabelEncoder to categorical columns
-# ds[columns_to_encode] = ds[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
+# Apply LabelEncoder to categorical columns
+ds[columns_to_encode] = ds[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
 
-# # Apply StandardScaler to numeric columns
-# ds[columns_to_scale] = scaler.fit_transform(ds[columns_to_scale])
+# Apply StandardScaler to numeric columns
+ds[columns_to_scale] = scaler.fit_transform(ds[columns_to_scale])
 
-# # Save LabelEncoder, StandardScaler, and other necessary information
-# filename = 'labSca.sav'
-# data_to_save = {
-#     'label_encoders': dict(lbl_en),
-#     'scaler': scaler,
-#     'columns_to_encode': columns_to_encode,
-#     'columns_to_scale': columns_to_scale
-#     # Add any other information you want to save
-# }
+# Save LabelEncoder, StandardScaler, and other necessary information
+filename = 'labSca.sav'
+data_to_save = {
+    'label_encoders': dict(lbl_en),
+    'scaler': scaler,
+    'columns_to_encode': columns_to_encode,
+    'columns_to_scale': columns_to_scale
+    # Add any other information you want to save
+}
 
 # pickle.dump(data_to_save, open(filename, 'wb'))
 

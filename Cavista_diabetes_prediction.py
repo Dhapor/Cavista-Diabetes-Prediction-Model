@@ -24,7 +24,7 @@ columns_to_encode = ['gender', 'smoking_history']
 columns_to_scale = ['age','bmi', 'blood_glucose_level']  # Add your numeric columns here
 
 # Apply LabelEncoder to categorical columns
-ds[columns_to_encode] = ds[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
+df[columns_to_encode] = df[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
 
 # Apply StandardScaler to numeric columns
 ds[columns_to_scale] = scaler.fit_transform(ds[columns_to_scale])

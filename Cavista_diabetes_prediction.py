@@ -141,6 +141,8 @@ def HomePage():
 
 # Function to define the modeling page content
 def modeling_page():
+    st.markdown("<h1 style='text-align: CENTER; color: #2B2A4C;'>Modelling Section </h1>", unsafe_allow_html=True)
+    st.markdown('<hr>', unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: LEFT; color: #2B2A4C;'>Dataset Sample</h1>", unsafe_allow_html=True)
     # st.sidebar.markdown('<br><br><br>', unsafe_allow_html= True)
     st.write(df)

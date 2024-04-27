@@ -21,7 +21,7 @@ lbl_en = defaultdict(LabelEncoder)
 scaler = StandardScaler()
 
 columns_to_encode = ['gender', 'smoking_history']
-columns_to_scale = ['age','bmi', 'blood_glucose_level','HbA1c_level, 'smoking_history']  # Add your numeric columns here
+columns_to_scale = ['age','bmi', 'blood_glucose_level','HbA1c_level','smoking_history']  # Add your numeric columns here
 # Apply LabelEncoder to categorical columns
 df[columns_to_encode] = df[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
 

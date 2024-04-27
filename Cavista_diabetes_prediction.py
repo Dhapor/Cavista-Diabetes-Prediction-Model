@@ -168,8 +168,6 @@ if selected_page == "Modeling":
     blood_glucose_level = st.sidebar.number_input("blood_glucose_level",0,1000)
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
 
-    st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Input Patient Name</h2>", unsafe_allow_html=True)
-    patient_name = st.text_input("")
 
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
 
@@ -199,8 +197,9 @@ if selected_page == "Modeling":
     for i in input_variables.columns:
         if i in cat.columns: 
             input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
-
-
+            
+    st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Input Patient Name</h2>", unsafe_allow_html=True)
+    patient_name = st.text_input("")
     if patient_name:
             if st.button('Press To Predict'):
                 st.markdown("<h4 style='color: #2B2A4C; text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)

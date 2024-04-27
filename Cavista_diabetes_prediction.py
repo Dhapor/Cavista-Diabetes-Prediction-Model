@@ -20,24 +20,24 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 lbl_en = defaultdict(LabelEncoder)
 scaler = StandardScaler()
 
-columns_to_encode = ['gender', 'smoking_history']
-columns_to_scale = ['age','bmi', 'blood_glucose_level']  # Add your numeric columns here
+# columns_to_encode = ['gender', 'smoking_history']
+# columns_to_scale = ['age','bmi', 'blood_glucose_level']  # Add your numeric columns here
 
-# Apply LabelEncoder to categorical columns
-df[columns_to_encode] = df[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
+# # Apply LabelEncoder to categorical columns
+# df[columns_to_encode] = df[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
 
-# Apply StandardScaler to numeric columns
-df[columns_to_scale] = scaler.fit_transform(df[columns_to_scale])
+# # Apply StandardScaler to numeric columns
+# df[columns_to_scale] = scaler.fit_transform(df[columns_to_scale])
 
-# Save LabelEncoder, StandardScaler, and other necessary information
-filename = 'labSca.sav'
-data_to_save = {
-    'label_encoders': dict(lbl_en),
-    'scaler': scaler,
-    'columns_to_encode': columns_to_encode,
-    'columns_to_scale': columns_to_scale
-    # Add any other information you want to save
-}
+# # Save LabelEncoder, StandardScaler, and other necessary information
+# filename = 'labSca.sav'
+# data_to_save = {
+#     'label_encoders': dict(lbl_en),
+#     'scaler': scaler,
+#     'columns_to_encode': columns_to_encode,
+#     'columns_to_scale': columns_to_scale
+#     # Add any other information you want to save
+# }
 
 # pickle.dump(data_to_save, open(filename, 'wb'))
 
@@ -186,22 +186,22 @@ if selected_page == "Modeling":
     import pickle
     import pandas as pd
     
-    # Load the saved model and scalers
-    filename = 'labSca.sav'
-    with open(filename, 'rb') as file:
-        saved_data = pickle.load(file)
+    # # Load the saved model and scalers
+    # filename = 'labSca.sav'
+    # with open(filename, 'rb') as file:
+    #     saved_data = pickle.load(file)
     
-    label_encoders = saved_data['label_encoders']
-    scaler = saved_data['scaler']
-    columns_to_encode = saved_data['columns_to_encode']
-    columns_to_scale = saved_data['columns_to_scale']
+    # label_encoders = saved_data['label_encoders']
+    # scaler = saved_data['scaler']
+    # columns_to_encode = saved_data['columns_to_encode']
+    # columns_to_scale = saved_data['columns_to_scale']
 
 
-    # Transform categorical columns using label encoders
-    for col, encoder in label_encoders.items():
-        # Reorder input_variables columns to match the order used during fitting
-        input_variables = input_variables[columns_to_encode + columns_to_scale]
-        input_variables[col] = encoder.transform(input_variables[col])
+    # # Transform categorical columns using label encoders
+    # for col, encoder in label_encoders.items():
+    #     # Reorder input_variables columns to match the order used during fitting
+    #     input_variables = input_variables[columns_to_encode + columns_to_scale]
+    #     input_variables[col] = encoder.transform(input_variables[col])
 
 
     if st.button('Press To Predict'):

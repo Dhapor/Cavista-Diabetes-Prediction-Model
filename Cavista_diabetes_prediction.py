@@ -95,7 +95,7 @@ import pickle
 from tensorflow.keras.models import load_model
 model = load_model('cavistadiabetespred.h5')
 
-st.sidebar.image('pngwing.com (1).png', width = 200,)
+st.sidebar.image('pngwing.com (1).png', width = 250,)
 st.sidebar.markdown('<br>', unsafe_allow_html=True)
 selected_page = st.sidebar.radio('Navigation', ['Home', 'Modeling'])
 
@@ -112,11 +112,11 @@ def HomePage():
     st.markdown('<br>', unsafe_allow_html= True)
 
     st.markdown("<h3 style='color: #2B2A4C;text-align: center; font-family:montserrat'>The Model Features</h3>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>gender</h3>", unsafe_allow_html=True)
-    st.markdown("<p>gender refers to the biological sex of the individual, which can have an impact on their susceptibility to diabetes. There are three</p>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Gender</h3>", unsafe_allow_html=True)
+    st.markdown("<p>Gender refers to the biological sex of the individual, which can have an impact on their susceptibility to diabetes. There are three</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>age</h3>", unsafe_allow_html=True)
-    st.markdown("<p>age is an important factor as diabetes is more commonly diagnosed in older adults.age ranges from 0-80 in our dataset.</p>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Age</h3>", unsafe_allow_html=True)
+    st.markdown("<p>Age is an important factor as diabetes is more commonly diagnosed in older adults.age ranges from 0-80 in our dataset.</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Hypertension</h3>", unsafe_allow_html=True)
     st.markdown("<p>Hypertension is a medical condition in which the blood pressure in the arteries is persistently elevated.</p>", unsafe_allow_html=True)

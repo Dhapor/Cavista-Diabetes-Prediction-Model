@@ -9,36 +9,36 @@ from sklearn.preprocessing import LabelEncoder
 
 df = pd.read_csv("diabetes_prediction_dataset.csv")
 # df = data.copy()
-# df.head(3)
+# # df.head(3)
 
-import pickle
-import pandas as pd
-from collections import defaultdict
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+# import pickle
+# import pandas as pd
+# from collections import defaultdict
+# from sklearn.preprocessing import LabelEncoder, StandardScaler
 
-# Create LabelEncoder and StandardScaler instances
-lbl_en = defaultdict(LabelEncoder)
-scaler = StandardScaler()
+# # Create LabelEncoder and StandardScaler instances
+# lbl_en = defaultdict(LabelEncoder)
+# scaler = StandardScaler()
 
-columns_to_encode = ['gender', 'smoking_history']
-columns_to_scale = ['age','bmi', 'blood_glucose_level','HbA1c_level','smoking_history']  # Add your numeric columns here
-# Apply LabelEncoder to categorical columns
-df[columns_to_encode] = df[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
+# columns_to_encode = ['gender', 'smoking_history']
+# columns_to_scale = ['age','bmi', 'blood_glucose_level','HbA1c_level','smoking_history']  # Add your numeric columns here
+# # Apply LabelEncoder to categorical columns
+# df[columns_to_encode] = df[columns_to_encode].apply(lambda x: lbl_en[x.name].fit_transform(x))
 
-# Apply StandardScaler to numeric columns
-df[columns_to_scale] = scaler.fit_transform(df[columns_to_scale])
+# # Apply StandardScaler to numeric columns
+# df[columns_to_scale] = scaler.fit_transform(df[columns_to_scale])
 
-# Save LabelEncoder, StandardScaler, and other necessary information
-filename = 'labSca.sav'
-data_to_save = {
-    'label_encoders': dict(lbl_en),
-    'scaler': scaler,
-    'columns_to_encode': columns_to_encode,
-    'columns_to_scale': columns_to_scale
-    # Add any other information you want to save
-}
+# # Save LabelEncoder, StandardScaler, and other necessary information
+# filename = 'labSca.sav'
+# data_to_save = {
+#     'label_encoders': dict(lbl_en),
+#     'scaler': scaler,
+#     'columns_to_encode': columns_to_encode,
+#     'columns_to_scale': columns_to_scale
+#     # Add any other information you want to save
+# }
 
-pickle.dump(data_to_save, open(filename, 'wb'))
+# pickle.dump(data_to_save, open(filename, 'wb'))
 
 
 # x = ds.drop('diabetes',axis=1)
@@ -181,40 +181,40 @@ if selected_page == "Modeling":
     st.markdown("<h2 style='text-align: LEFT; color: #2B2A4C;'>Your Input Appears Here</h2>", unsafe_allow_html=True)
     st.write(input_variables)
 
-    import pickle
-    import pandas as pd
+    # import pickle
+    # import pandas as pd
     
     # Load the saved model and scalers
-    filename = 'labSca.sav'
-    with open(filename, 'rb') as file:
-        saved_data = pickle.load(file)
+    # filename = 'labSca.sav'
+    # with open(filename, 'rb') as file:
+    #     saved_data = pickle.load(file)
     
-    label_encoders = saved_data['label_encoders']
-    scaler = saved_data['scaler']
-    columns_to_encode = saved_data['columns_to_encode']
-    columns_to_scale = saved_data['columns_to_scale']
+    # label_encoders = saved_data['label_encoders']
+    # scaler = saved_data['scaler']
+    # columns_to_encode = saved_data['columns_to_encode']
+    # columns_to_scale = saved_data['columns_to_scale']
     
     
-    # Transform categorical columns using label encoders
-    for col, encoder in label_encoders.items():
-        input_variables[col] = encoder.transform(input_variables[col])
+    # # Transform categorical columns using label encoders
+    # for col, encoder in label_encoders.items():
+    #     input_variables[col] = encoder.transform(input_variables[col])
     
-    # Scale numerical columns using the saved scaler
-    input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
+    # # Scale numerical columns using the saved scaler
+    # input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
     
 
 
-    # cat = input_variables.select_dtypes(include = ['object', 'category'])
-    # num = input_variables.select_dtypes(include = 'number')
+    cat = input_variables.select_dtypes(include = ['object', 'category'])
+    num = input_variables.select_dtypes(include = 'number')
 
-    # # Standard Scale the Input Variable.
-    # from sklearn.preprocessing import StandardScaler, LabelEncoder
-    # for i in input_variables.columns:
-    #     if i in num.columns:
-    #         input_variables[i] = StandardScaler().fit_transform(input_variables[[i]])
-    # for i in input_variables.columns:
-    #     if i in cat.columns: 
-    #         input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
+    # Standard Scale the Input Variable.
+    from sklearn.preprocessing import StandardScaler, LabelEncoder
+    for i in input_variables.columns:
+        if i in num.columns:
+            input_variables[i] = StandardScaler().fit_transform(input_variables[[i]])
+    for i in input_variables.columns:
+        if i in cat.columns: 
+            input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
 
 
     if st.button('Press To Predict'):

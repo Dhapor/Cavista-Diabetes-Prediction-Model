@@ -171,6 +171,7 @@ if selected_page == "Modeling":
     st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Input Patient Name</h2>", unsafe_allow_html=True)
     patient_name = st.text_input("")
 
+    st.sidebar.markdown('<br>', unsafe_allow_html= True)
 
     input_variables = pd.DataFrame([{
         'gender':gender,
@@ -185,28 +186,6 @@ if selected_page == "Modeling":
 
     st.markdown("<h2 style='text-align: LEFT; color: #2B2A4C;'>Your Input Appears Here</h2>", unsafe_allow_html=True)
     st.write(input_variables)
-
-    # import pickle
-    # import pandas as pd
-    
-    # Load the saved model and scalers
-    # filename = 'labSca.sav'
-    # with open(filename, 'rb') as file:
-    #     saved_data = pickle.load(file)
-    
-    # label_encoders = saved_data['label_encoders']
-    # scaler = saved_data['scaler']
-    # columns_to_encode = saved_data['columns_to_encode']
-    # columns_to_scale = saved_data['columns_to_scale']
-    
-    
-    # # Transform categorical columns using label encoders
-    # for col, encoder in label_encoders.items():
-    #     input_variables[col] = encoder.transform(input_variables[col])
-    
-    # # Scale numerical columns using the saved scaler
-    # input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
-    
 
 
     cat = input_variables.select_dtypes(include = ['object', 'category'])
@@ -237,7 +216,6 @@ if selected_page == "Modeling":
     
     st.markdown('<hr>', unsafe_allow_html=True)
     
-
     st.markdown("<h8 style = 'color: #2B2A4C; text-align: LEFT; font-family:montserrat'>DIABETES PREDICTION MODEL BUILT BY ORPHEUS SNIPERS </h8>",unsafe_allow_html=True)
 
 

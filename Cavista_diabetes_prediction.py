@@ -95,7 +95,7 @@ import pickle
 from tensorflow.keras.models import load_model
 model = load_model('cavistadiabetespred.h5')
 
-st.sidebar.image('pngwing.com (1).png', width = 200,)
+st.sidebar.image('pngwing.com (1).png', width = 150,)
 st.sidebar.markdown('<br>', unsafe_allow_html=True)
 selected_page = st.sidebar.radio('Navigation', ['Home', 'Modeling'])
 
@@ -105,7 +105,7 @@ def HomePage():
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown("<h6 style = 'margin: -15px; color: #2B2A4C; text-align: center ; font-family:montserrat'>This is a Diabetes Prediction Model that was built by the Orpheus Sniper at the Cavista Hackathon Using Machine Learning to Enhance Early Detection and Improve Patient Outcomes.</h6>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.image('glowing-abstract-design-cancer-cells-generated-by-ai.jpg',  width = 700)
+    st.image('glowing-abstract-design-cancer-cells-generated-by-ai.jpg',  width = 900)
     st.markdown('<br>', unsafe_allow_html= True)
 
     st.markdown('<br>', unsafe_allow_html= True)

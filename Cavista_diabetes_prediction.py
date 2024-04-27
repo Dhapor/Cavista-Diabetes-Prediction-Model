@@ -204,6 +204,19 @@ if selected_page == "Modeling":
     #     input_variables[col] = encoder.transform(input_variables[col])
 
 
+cat = input_variables.select_dtypes(include = ['object', 'category'])
+num = input_variables.select_dtypes(include = 'number')
+
+# Standard Scale the Input Variable.
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+for i in input_variables.columns:
+    if i in num.columns:
+        input_variables[i] = StandardScaler().fit_transform(input_variables[[i]])
+for i in input_variables.columns:
+    if i in cat.columns: 
+        input_variables[i] = LabelEncoder().fit_transform(input_variables[i])
+
+
     if st.button('Press To Predict'):
         st.markdown("<h4 style = 'color: #2B2A4C; text-align: left; font-family: montserrat '>Model Report</h4>", unsafe_allow_html = True)
         predicted = model.predict(input_variables)

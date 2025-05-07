@@ -100,9 +100,9 @@ selected_page = st.sidebar.radio('Navigation', ['Home', 'Modeling'])
 
 def HomePage():
     # Streamlit app header
-    st.markdown("<h1 style = 'color: #2B2A4C; text-align: center; font-family:montserrat'>Diabetes Prediction Model</h1>",unsafe_allow_html=True)
+    st.markdown("<h1 style = ' text-align: center; font-family:montserrat'>Diabetes Prediction Model</h1>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h6 style = 'margin: -15px; color: #2B2A4C; text-align: center ; font-family:montserrat'>This is a Diabetes Prediction Model that was built by the Orpheus Sniper at the Cavista Hackathon Using Machine Learning to Enhance Early Detection and Improve Patient Outcomes.</h6>",unsafe_allow_html=True)
+    st.markdown("<h6 style = 'margin: -15px;  text-align: center ; font-family:montserrat'>This is a Diabetes Prediction Model that was built by the Orpheus Sniper at the Cavista Hackathon Using Machine Learning to Enhance Early Detection and Improve Patient Outcomes.</h6>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
     st.image('glowing-abstract-design-cancer-cells-generated-by-ai.jpg',  width = 700)
     st.markdown('<br>', unsafe_allow_html= True)
@@ -110,29 +110,29 @@ def HomePage():
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown('<br>', unsafe_allow_html= True)
 
-    st.markdown("<h3 style='color: #2B2A4C;text-align: center; font-family:montserrat'>The Model Features</h3>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Gender</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; font-family:montserrat'>The Model Features</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Gender</h3>", unsafe_allow_html=True)
     st.markdown("<p>Gender refers to the biological sex of the individual, which can have an impact on their susceptibility to diabetes. There are three</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Age</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Age</h3>", unsafe_allow_html=True)
     st.markdown("<p>Age is an important factor as diabetes is more commonly diagnosed in older adults.age ranges from 0-80 in our dataset.</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Hypertension</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Hypertension</h3>", unsafe_allow_html=True)
     st.markdown("<p>Hypertension is a medical condition in which the blood pressure in the arteries is persistently elevated.</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Heart Diseases</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Heart Diseases</h3>", unsafe_allow_html=True)
     st.markdown("<p>Heart disease is another medical condition that is associated with an increased risk of developing diabetes.</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Smoking history</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Smoking history</h3>", unsafe_allow_html=True)
     st.markdown("<p>Smoking history is also considered a risk factor for diabetes and can exacerbate the complications associated</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Body Mass Index</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Body Mass Index</h3>", unsafe_allow_html=True)
     st.markdown("<p>BMI (Body Mass Index) is a measure of body fat based on weight and height. Higher BMI values are linked to a higher risk</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Hemoglobin A1c</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Hemoglobin A1c</h3>", unsafe_allow_html=True)
     st.markdown("<p>HbA1c (Hemoglobin A1c) level is a measure of a person's average blood sugar level over the past 2-3 months.</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Blood glucose level</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Blood glucose level</h3>", unsafe_allow_html=True)
     st.markdown("<p>Blood glucose level refers to the amount of glucose in the bloodstream at a given time. </p>", unsafe_allow_html=True)
 
 
@@ -141,9 +141,9 @@ def HomePage():
 
 # Function to define the modeling page content
 def modeling_page():
-    st.markdown("<h1 style='text-align: CENTER; color: #2B2A4C;'>Modelling Section </h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: CENTER; '>Modelling Section </h1>", unsafe_allow_html=True)
     st.markdown('<hr>', unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: LEFT; color: #2B2A4C;'>Dataset Sample</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: LEFT; '>Dataset Sample</h1>", unsafe_allow_html=True)
     # st.sidebar.markdown('<br><br><br>', unsafe_allow_html= True)
     st.write(df)
     # st.sidebar.image('pngwing.com (13).png', width = 300,  caption = 'customer and deliver agent info')
@@ -182,7 +182,7 @@ if selected_page == "Modeling":
     }])
 
 
-    st.markdown("<h2 style='text-align: LEFT; color: #2B2A4C;'>Your Input Appears Here</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: LEFT; '>Your Input Appears Here</h2>", unsafe_allow_html=True)
     st.write(input_variables)
 
 
@@ -202,7 +202,7 @@ if selected_page == "Modeling":
     patient_name = st.text_input("")
     if patient_name:
             if st.button('Press To Predict'):
-                st.markdown("<h4 style='color: #2B2A4C; text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)
+                st.markdown("<h4 style=' text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)
                 predicted = model.predict(input_variables)
                 st.toast('Predicted Successfully')
                 st.image('check icon.png', width=100)
@@ -215,7 +215,7 @@ if selected_page == "Modeling":
     
     st.markdown('<hr>', unsafe_allow_html=True)
     
-    st.markdown("<h8 style = 'color: #2B2A4C; text-align: LEFT; font-family:montserrat'>DIABETES PREDICTION MODEL BUILT BY ORPHEUS SNIPERS </h8>",unsafe_allow_html=True)
+    st.markdown("<h8 style = ' text-align: LEFT; font-family:montserrat'>DIABETES PREDICTION MODEL BUILT BY ORPHEUS SNIPERS </h8>",unsafe_allow_html=True)
 
 
     

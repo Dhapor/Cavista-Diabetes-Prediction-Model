@@ -299,7 +299,7 @@ with tab_data:
         axes[0].set_title('Diabetes Distribution')
 
         sns.boxplot(data=df, x='diabetes', y='blood_glucose_level',
-                    palette={0: '#2e7d32', 1: '#c62828'}, ax=axes[1])
+                    palette={0: '#2e7d32', 1: '#c62828', '0': '#2e7d32', '1': '#c62828'}, ax=axes[1])
         axes[1].set_title('Blood Glucose by Diabetes Status')
         axes[1].set_xlabel('Diabetes (0 = No, 1 = Yes)')
         axes[1].set_ylabel('Blood Glucose Level (mg/dL)')
